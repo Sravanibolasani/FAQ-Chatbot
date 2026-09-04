@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CodeAlpha FAQ Chatbot</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="chat-container">
+
+        <!-- Header -->
+        <div class="chat-header">
+
+            <h1>🤖 CodeAlpha FAQ Chatbot</h1>
+
+            <p>Ask me anything about CodeAlpha</p>
+
+            <button class="clear-btn" onclick="clearChat()">
+                🧹 Clear Chat
+            </button>
+
+        </div>
+
+
+        <!-- Suggested Questions -->
+        <div class="suggestions">
+
+            <p>💡 Try asking:</p>
+
+            <button onclick="askSuggestion('What is NLP?')">
+                What is NLP?
+            </button>
+
+            <button onclick="askSuggestion('What is a chatbot?')">
+                What is a chatbot?
+            </button>
+
+            <button onclick="askSuggestion('What is GitHub?')">
+                What is GitHub?
+            </button>
+
+            <button onclick="askSuggestion('What does LOR mean?')">
+                What is LOR?
+            </button>
+
+        </div>
+
+
+        <!-- Chat Messages -->
+        <div id="chat-box" class="chat-box">
+
+            <div class="message bot-message">
+                <span>
+                    Hello! 👋 I'm your CodeAlpha FAQ Assistant.
+                    How can I help you?
+                </span>
+            </div>
+
+        </div>
+
+
+        <!-- Input Area -->
+        <div class="input-area">
+
+            <input
+                type="text"
+                id="user-input"
+                placeholder="Type your question..."
+                autocomplete="off"
+            >
+
+            <button onclick="sendMessage()">
+                Send
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+[
+    {
+        "question": "What is CodeAlpha?",
+        "answer": "CodeAlpha is an organization that provides internship and learning opportunities for students."
+    },
+    {
+        "question": "How can I apply for the internship?",
+        "answer": "You can apply for CodeAlpha internship opportunities through their official internship application process."
+    },
+    {
+        "question": "What tasks are available in the internship?",
+        "answer": "Internship tasks can include projects related to artificial intelligence, machine learning, web development, and other technical areas."
+    },
+    {
+        "question": "How many tasks should I complete?",
+        "answer": "Students are generally required to complete the tasks specified in their internship guidelines."
+    },
+    {
+        "question": "What is an internship certificate?",
+        "answer": "An internship certificate is proof that you successfully completed the internship requirements."
+    },
+    {
+        "question": "What is an LOR?",
+        "answer": "LOR stands for Letter of Recommendation. It can describe your skills, performance, and contribution during the internship."
+    },
+    {
+        "question": "How do I submit my project?",
+        "answer": "You can submit your completed project according to the internship submission guidelines, including uploading your source code to GitHub when required."
+    },
+    {
+        "question": "What is GitHub?",
+        "answer": "GitHub is a platform used to store, manage, and share source code using Git."
+    },
+    {
+        "question": "What is NLP?",
+        "answer": "NLP stands for Natural Language Processing. It allows computers to process and understand human language."
+    },
+    {
+        "question": "What is a chatbot? Tell me about chatbots.",
+        "answer": "A chatbot is a software application that communicates with users and provides responses to their questions."
+    },
+{
+    "question": "What is artificial intelligence?",
+    "answer": "Artificial Intelligence is the field of computer science that focuses on creating systems that can perform tasks that normally require human intelligence."
+},
+{
+    "question": "What is machine learning?",
+    "answer": "Machine learning is a branch of artificial intelligence where computers learn patterns from data and improve their performance without being explicitly programmed for every task."
+},
+{
+    "question": "What is TF-IDF?",
+    "answer": "TF-IDF stands for Term Frequency-Inverse Document Frequency. It is a technique used to measure the importance of words in text and is useful for text similarity."
+},
+{
+    "question": "What is cosine similarity?",
+    "answer": "Cosine similarity is a technique used to measure how similar two text vectors are by comparing the angle between them."
+},
+{
+    "question": "How does this chatbot work?",
+    "answer": "This chatbot cleans the user's question, converts the FAQ questions into TF-IDF vectors, calculates cosine similarity, and returns the answer with the highest similarity score."
+}
+]
