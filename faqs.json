@@ -1,10 +1,11 @@
+
 [
     {
         "question": "What is CodeAlpha?",
         "answer": "CodeAlpha is an organization that provides internship and learning opportunities for students."
     },
     {
-        "question": "How can I apply for the internship?",
+        "question": "How can I apply for an internship?",
         "answer": "You can apply for CodeAlpha internship opportunities through their official internship application process."
     },
     {
@@ -17,11 +18,11 @@
     },
     {
         "question": "What is an internship certificate?",
-        "answer": "An internship certificate is proof that you successfully completed the internship requirements."
+        "answer": "An internship certificate is proof that you have successfully completed the internship requirements."
     },
     {
         "question": "What is an LOR?",
-        "answer": "LOR stands for Letter of Recommendation. It can describe your skills, performance, and contribution during the internship."
+        "answer": "LOR stands for Letter of Recommendation. It describes your skills, performance, and contribution during an internship."
     },
     {
         "question": "How do I submit my project?",
@@ -36,27 +37,47 @@
         "answer": "NLP stands for Natural Language Processing. It allows computers to process and understand human language."
     },
     {
-        "question": "What is a chatbot? Tell me about chatbots.",
+        "question": "What is a chatbot?",
         "answer": "A chatbot is a software application that communicates with users and provides responses to their questions."
     },
-{
-    "question": "What is artificial intelligence?",
-    "answer": "Artificial Intelligence is the field of computer science that focuses on creating systems that can perform tasks that normally require human intelligence."
-},
-{
-    "question": "What is machine learning?",
-    "answer": "Machine learning is a branch of artificial intelligence where computers learn patterns from data and improve their performance without being explicitly programmed for every task."
-},
-{
-    "question": "What is TF-IDF?",
-    "answer": "TF-IDF stands for Term Frequency-Inverse Document Frequency. It is a technique used to measure the importance of words in text and is useful for text similarity."
-},
-{
-    "question": "What is cosine similarity?",
-    "answer": "Cosine similarity is a technique used to measure how similar two text vectors are by comparing the angle between them."
-},
-{
-    "question": "How does this chatbot work?",
-    "answer": "This chatbot cleans the user's question, converts the FAQ questions into TF-IDF vectors, calculates cosine similarity, and returns the answer with the highest similarity score."
-}
+    {
+        "question": "What is artificial intelligence?",
+        "answer": "Artificial Intelligence is a field of computer science that focuses on creating systems that can perform tasks that normally require human intelligence."
+    },
+    {
+        "question": "What is machine learning?",
+        "answer": "Machine learning is a branch of artificial intelligence where computers learn patterns from data and improve their performance without being explicitly programmed for every task."
+    },
+    {
+        "question": "What is TF-IDF?",
+        "answer": "TF-IDF stands for Term Frequency-Inverse Document Frequency. It is a technique used to measure the importance of words in text and is useful for text similarity."
+    },
+    {
+        "question": "What is cosine similarity?",
+        "answer": "Cosine similarity is a technique used to measure how similar two text vectors are by comparing the angle between them."
+    },
+    {
+        "question": "How does this chatbot work?",
+        "answer": "This chatbot cleans the user's question, converts FAQ questions into TF-IDF vectors, calculates cosine similarity, and returns the answer with the highest similarity score."
+    },
+    {
+        "question": "What programming languages are used?",
+        "answer": "This project uses Python for the backend, HTML and CSS for the interface, and JavaScript for chat interactions."
+    },
+    {
+        "question": "What is Flask?",
+        "answer": "Flask is a lightweight Python web framework used to build web applications and connect the chatbot backend with the frontend."
+    },
+    {
+        "question": "What is the purpose of this project?",
+        "answer": "The purpose of this project is to develop an FAQ chatbot that automatically answers frequently asked questions using NLP and text similarity techniques."
+    },
+    {
+        "question": "What is the difference between AI and ML?",
+        "answer": "Artificial Intelligence enables machines to perform intelligent tasks, while Machine Learning is a subset of AI that allows machines to learn from data."
+    },
+    {
+        "question": "Can I ask questions in different ways?",
+        "answer": "Yes. The chatbot uses text similarity to identify questions that are similar to the stored FAQs and return relevant answers."
+    }
 ]

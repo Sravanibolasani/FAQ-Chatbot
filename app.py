@@ -1,3 +1,4 @@
+
 from flask import Flask, render_template, request, jsonify
 from chatbot import get_answer
 
@@ -11,20 +12,27 @@ def home():
 
 @app.route("/ask", methods=["POST"])
 def ask():
-    data = request.get_json()
+    try:
+        data = request.get_json(silent=True) or {}
+        user_question = data.get("question", "").strip()
 
-    user_question = data.get("question", "").strip()
+        if not user_question:
+            return jsonify({
+                "answer": "Please enter a question."
+            }), 400
 
-    if not user_question:
+        answer = get_answer(user_question)
+
         return jsonify({
-            "answer": "Please enter a question."
+            "answer": answer
         })
 
-    answer = get_answer(user_question)
+    except Exception as error:
+        app.logger.exception("Chatbot error: %s", error)
 
-    return jsonify({
-        "answer": answer
-    })
+        return jsonify({
+            "answer": "Sorry, something went wrong. Please try again."
+        }), 500
 
 
 if __name__ == "__main__":

@@ -1,3 +1,3 @@
-Flask
-nltk
-scikit-learn
+
+Flask>=3.0,<4.0
+scikit-learn>=1.4,<2.0

@@ -1,12 +1,13 @@
-# 🤖 CodeAlpha FAQ Chatbot
 
-An NLP-based FAQ chatbot developed as part of the CodeAlpha internship.
+# 🤖 FAQ Chatbot
+
+An NLP-based FAQ Chatbot developed using Python, Flask, and Machine Learning techniques.
 
 ## 📌 Project Overview
 
-This chatbot answers frequently asked questions using Natural Language Processing and text similarity techniques.
+This project is designed to answer frequently asked questions using Natural Language Processing and text similarity techniques.
 
-The system preprocesses user questions, converts FAQ questions into TF-IDF vectors, calculates cosine similarity, and returns the most relevant answer.
+The chatbot processes user questions, converts FAQ questions into TF-IDF vectors, calculates cosine similarity, and returns the most relevant answer.
 
 ## ✨ Features
 
@@ -14,7 +15,7 @@ The system preprocesses user questions, converts FAQ questions into TF-IDF vecto
 - TF-IDF text vectorization
 - Cosine similarity matching
 - Confidence threshold for irrelevant questions
-- AI abbreviation handling
+- Common abbreviation handling
 - Suggested FAQ questions
 - Clear Chat button
 - Typing indicator
@@ -25,9 +26,8 @@ The system preprocesses user questions, converts FAQ questions into TF-IDF vecto
 ## 🛠️ Technologies Used
 
 - Python
-- NLTK
-- Scikit-learn
 - Flask
+- Scikit-learn
 - HTML
 - CSS
 - JavaScript
@@ -36,6 +36,7 @@ The system preprocesses user questions, converts FAQ questions into TF-IDF vecto
 
 ## 📂 Project Structure
 
+```text
 CodeAlpha_FAQChatbot/
 │
 ├── app.py
@@ -47,48 +48,80 @@ CodeAlpha_FAQChatbot/
 ├── templates/
 │   └── index.html
 │
-├── static/
-│   ├── style.css
-│   └── script.js
-│
-└── venv/
+└── static/
+    ├── style.css
+    └── script.js
+```
 
 ## ▶️ How to Run
 
-### 1. Create virtual environment
+### 1. Clone the repository
 
+```bash
+git clone YOUR_GITHUB_REPOSITORY_URL
+```
+
+### 2. Open the project folder
+
+```bash
+cd CodeAlpha_FAQChatbot
+```
+
+### 3. Create virtual environment
+
+```bash
 python -m venv venv
+```
 
-### 2. Activate environment
+### 4. Activate virtual environment
 
-Windows:
+Windows PowerShell:
 
+```powershell
+.\venv\Scripts\Activate.ps1
+```
+
+Windows CMD:
+
+```cmd
 venv\Scripts\activate.bat
+```
 
-### 3. Install dependencies
+### 5. Install dependencies
 
+```bash
 pip install -r requirements.txt
+```
 
-### 4. Run Flask
+### 6. Run Flask application
 
+```bash
 python app.py
+```
 
-### 5. Open browser
+### 7. Open in browser
 
 http://127.0.0.1:5000
 
 ## 🧠 How It Works
 
-1. User enters a question.
+1. User enters a question in the chatbot interface.
 2. The question is cleaned and normalized.
 3. FAQ questions are converted into TF-IDF vectors.
-4. Cosine similarity compares the user's question with the FAQs.
-5. The highest-confidence matching FAQ is selected.
-6. The chatbot displays the corresponding answer.
+4. Cosine similarity compares the user's question with stored FAQs.
+5. The highest-scoring matching FAQ is selected.
+6. The chatbot displays the corresponding answer if the confidence threshold is met.
+
+## 🎯 Applications
+
+- Frequently Asked Questions
+- Internship Information Assistance
+- Basic Educational Support
+- Automated Question Answering
 
 ## 👩‍💻 Internship
 
-Developed for the CodeAlpha Internship Program.
+Originally developed as part of the CodeAlpha Internship Program.
 
 ## 📜 License
 

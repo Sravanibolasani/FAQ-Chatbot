@@ -1,131 +1,94 @@
+
+console.log("FAQ Chatbot JavaScript loaded!");
+
 const userInput = document.getElementById("user-input");
 const chatBox = document.getElementById("chat-box");
+const sendButton = document.getElementById("send-btn");
 
+console.log("Input:", userInput);
+console.log("Chat box:", chatBox);
+console.log("Send button:", sendButton);
 
 function addMessage(message, sender) {
-    const messageDiv = document.createElement("div");
-    messageDiv.classList.add("message");
+    const div = document.createElement("div");
+    div.className = "message " + (sender === "user" ? "user-message" : "bot-message");
 
-    if (sender === "user") {
-        messageDiv.classList.add("user-message");
-    } else {
-        messageDiv.classList.add("bot-message");
-    }
+    const span = document.createElement("span");
+    span.textContent = message;
 
-    const messageSpan = document.createElement("span");
-    messageSpan.textContent = message;
-
-    messageDiv.appendChild(messageSpan);
-    chatBox.appendChild(messageDiv);
-
+    div.appendChild(span);
+    chatBox.appendChild(div);
     chatBox.scrollTop = chatBox.scrollHeight;
 }
-
-
-// Typing indicator
-function showTyping() {
-    const typingDiv = document.createElement("div");
-
-    typingDiv.id = "typing-indicator";
-    typingDiv.classList.add("message", "bot-message");
-
-    typingDiv.innerHTML = `
-        <span>🤖 Bot is typing...</span>
-    `;
-
-    chatBox.appendChild(typingDiv);
-    chatBox.scrollTop = chatBox.scrollHeight;
-}
-
-
-function removeTyping() {
-    const typingIndicator = document.getElementById("typing-indicator");
-
-    if (typingIndicator) {
-        typingIndicator.remove();
-    }
-}
-
 
 async function sendMessage() {
+    console.log("Send button clicked!");
 
     const question = userInput.value.trim();
 
-    if (question === "") {
-        return;
-    }
+    if (!question) return;
 
-    // Show user's message
     addMessage(question, "user");
-
-    // Clear input
     userInput.value = "";
 
-    // Show typing indicator
-    showTyping();
+    const typing = document.createElement("div");
+    typing.id = "typing-indicator";
+    typing.className = "message bot-message";
+    typing.innerHTML = "<span>🤖 Bot is typing...</span>";
+    chatBox.appendChild(typing);
+
+    sendButton.disabled = true;
 
     try {
+        console.log("Sending request to Flask...");
 
         const response = await fetch("/ask", {
             method: "POST",
-
             headers: {
                 "Content-Type": "application/json"
             },
-
-            body: JSON.stringify({
-                question: question
-            })
+            body: JSON.stringify({ question })
         });
+
+        console.log("Server response:", response.status);
 
         const data = await response.json();
 
-        // Remove typing indicator
-        removeTyping();
+        document.getElementById("typing-indicator")?.remove();
 
-        // Show bot response
-        addMessage(data.answer, "bot");
+        addMessage(data.answer || "No answer received.", "bot");
 
     } catch (error) {
+        console.error("Chatbot error:", error);
 
-        console.error("Error:", error);
+        document.getElementById("typing-indicator")?.remove();
 
-        removeTyping();
+        addMessage("Unable to connect to the chatbot server.", "bot");
 
-        addMessage(
-            "Sorry, something went wrong. Please try again.",
-            "bot"
-        );
+    } finally {
+        sendButton.disabled = false;
     }
 }
 
-
-// Suggested question buttons
 function askSuggestion(question) {
     userInput.value = question;
     sendMessage();
 }
 
-
-// Clear chat
 function clearChat() {
-
-    chatBox.innerHTML = `
-        <div class="message bot-message">
-            <span>
-                Hello! 👋 I'm your CodeAlpha FAQ Assistant.
-                How can I help you?
-            </span>
-        </div>
-    `;
+    chatBox.innerHTML = "";
+    addMessage("Hello! 👋 Welcome to FAQ Chatbot. How can I help you?", "bot");
 }
 
+window.sendMessage = sendMessage;
+window.askSuggestion = askSuggestion;
+window.clearChat = clearChat;
 
-// Press Enter to send
+sendButton.addEventListener("click", sendMessage);
+
 userInput.addEventListener("keydown", function(event) {
-
     if (event.key === "Enter") {
+        event.preventDefault();
         sendMessage();
     }
-
 });
